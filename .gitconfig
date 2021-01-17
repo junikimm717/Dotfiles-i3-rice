@@ -1,1 +1,5 @@
-/home/junikim/.gitconfig
+[pull]
+	rebase = false
+[user]
+	email = junikimm717@gmail.com
+	name = junikimm717
