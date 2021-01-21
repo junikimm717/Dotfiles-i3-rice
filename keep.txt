@@ -1,0 +1,1 @@
+.git|.gitconfig|README.md|keep.txt|backup.sh|tmpbackup|..|.

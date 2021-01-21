@@ -60,4 +60,15 @@ func! WordProcessor()
 endfu
 nnoremap <F6> :call WordProcessor() <ESC>
 
+
+func! Lesser()
+    map j gj
+    map k gk
+endfu
+nnoremap <F7> :call Lesser() <ESC>
+
+autocmd Filetype tex nnoremap <F12> :w <bar> :!pdflatex %:p <ESC>
+autocmd Filetype nroff nnoremap <F12> :w <bar> :!groff -ms %:r\.ms -T pdf >> %:r\.pdf <ESC>
+autocmd Filetype tex,nroff call Lesser()
+
 syntax on

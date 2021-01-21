@@ -33,6 +33,7 @@ darkgrey = #555
 red = #f00
 green = #0f0
 blue = #4c7899
+yellow = #d2b55b
 
 
 [bar/mybar]
@@ -48,7 +49,8 @@ offset-y = 15
 offset-x = 50
 ;padding = 8
 ;module-margin = 4
-background = #144840
+;background = #144840
+background = #000000
 radius = 10
 override-redirect=true
 
@@ -60,15 +62,17 @@ label-connected = "| %ifname%: %essid% %signal%%  %{F#00F000}%local_ip% %{F#F000
 
 [module/date]
 type = internal/date
-date = "%d-%h-%y %H:%M:%S"
+date = "%d-%h-20%y %H:%M:%S"
 
 [module/i3]
 type = internal/i3
 label-focused = %index%
-label-focused-background = ${colors.blue}
-label-focused-foreground = ${colors.white}
-label-focused-underline= #ffff00
+label-focused-background = ${colors.yellow}
+label-focused-foreground = ${colors.black}
+label-focused-underline= #ffffff
+label-focused-line-size=3
 label-focused-padding = 1
+
 label-unfocused = %index%
 label-unfocused-foreground = ${colors.grey}
 label-unfocused-padding = 1
