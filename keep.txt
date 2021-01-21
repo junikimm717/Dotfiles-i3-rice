@@ -1,1 +1,1 @@
-.git|.gitconfig|README.md|keep.txt|backup.sh|tmpbackup|..|.
+.git|.gitconfig|README.md|keep.txt|backup.sh|tmpbackup|..|.|rice.png
