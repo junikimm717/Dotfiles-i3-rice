@@ -5,3 +5,4 @@ which yay > /dev/null || exit 127
 
 yay -S picom-rounded-corners polybar
 sudo pacman -S neovim i3
+sudo pacman -S ttf-dejavu
