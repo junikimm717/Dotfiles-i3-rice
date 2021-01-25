@@ -62,7 +62,7 @@ label-connected = "| %ifname%: %essid% %signal%%  %{F#00F000}%local_ip% %{F#F000
 
 [module/date]
 type = internal/date
-date = "%d-%h-20%y %H:%M:%S"
+date = "%h-%d-20%y %H:%M:%S"
 
 [module/i3]
 type = internal/i3
