@@ -42,7 +42,7 @@ autocmd FileType c,cpp,slang set cindent
 inoremap {<CR> {<CR>}<ESC>O
 map <F5> :!bash test.sh <ESC>
 set number
-set relativenumber
+"set relativenumber
 
 func! WordProcessor()
   " movement changes
