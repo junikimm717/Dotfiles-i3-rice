@@ -21,7 +21,13 @@ z() {
     zathura $@ & disown
 }
 l() {
-    ls -al $@
+    ls -a $@
+}
+c() {
+    clear
+}
+r() {
+    ranger
 }
 
 export EDITOR=nvim
