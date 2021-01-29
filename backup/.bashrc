@@ -20,14 +20,23 @@ v() {
 z() {
     zathura $@ & disown
 }
-l() {
+s() {
     ls -a $@
 }
 c() {
     clear
 }
 r() {
-    ranger
+    ranger $@
+}
+e() {
+    exit $@
+}
+a() {
+    alsamixer
+}
+mkcd() {
+    mkdir $1 && cd $1
 }
 
 export EDITOR=nvim
