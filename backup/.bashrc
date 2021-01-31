@@ -21,7 +21,7 @@ z() {
     zathura $@ & disown
 }
 s() {
-    ls -a $@
+    ls $@
 }
 c() {
     clear
@@ -35,9 +35,18 @@ e() {
 a() {
     alsamixer
 }
+p() {
+    python3
+}
+
+m() {
+    ~/cp/make_prob.py $@
+}
+
 mkcd() {
     mkdir $1 && cd $1
 }
+
 
 export EDITOR=nvim
 export QT_STYLE_OVERRIDE=Fusion
