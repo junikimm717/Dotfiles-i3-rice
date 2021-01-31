@@ -56,7 +56,6 @@ func! WordProcessor()
   set thesaurus+=/home/test/.vim/thesaurus/mthesaur.txt
   " complete+=s makes autocompletion search the thesaurus
   set complete+=s
-  set nonumber
 endfu
 nnoremap <F6> :call WordProcessor() <ESC>
 
@@ -67,8 +66,9 @@ func! Lesser()
 endfu
 nnoremap <F7> :call Lesser() <ESC>
 
+autocmd BufNewFile,BufRead *.ms :set filetype=groff
 autocmd Filetype tex nnoremap <F12> :w <bar> :!pdflatex %:p <ESC>
-autocmd Filetype nroff nnoremap <F12> :w <bar> :!groff -ms %:r\.ms -T pdf >> %:r\.pdf <ESC>
-autocmd Filetype tex,nroff call Lesser()
+autocmd Filetype groff nnoremap <F12> :w <bar> :!groff -ms %:r\.ms -T pdf >> %:r\.pdf <ESC>
+autocmd Filetype tex,groff call Lesser()
 
 syntax on
