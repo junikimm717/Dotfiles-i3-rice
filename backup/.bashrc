@@ -27,7 +27,7 @@ c() {
     clear
 }
 r() {
-    ranger $@
+    source ranger $@
 }
 e() {
     exit $@
@@ -41,6 +41,10 @@ p() {
 
 m() {
     ~/cp/make_prob.py $@
+}
+
+x() {
+    sxiv $@ &disown
 }
 
 mkcd() {

@@ -41,7 +41,7 @@ modules-left = i3
 modules-center = date
 modules-right = backlight battery wlan
 tray-position = right
-;font-0 = Source Code Pro:style=Regular
+font-0 = JetBrains Mono:style=Regular
 ;padding = 2
 height = 30
 width = 1820
@@ -71,15 +71,15 @@ label-focused-background = ${colors.yellow}
 label-focused-foreground = ${colors.black}
 label-focused-underline= #ffffff
 label-focused-line-size=3
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-unfocused = %index%
 label-unfocused-foreground = ${colors.grey}
-label-unfocused-padding = 2
+label-unfocused-padding = 1
 label-urgent = %index%
 label-urgent-foreground = ${colors.white}
 label-urgent-background = ${colors.red}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 [module/battery]
 type = internal/battery
