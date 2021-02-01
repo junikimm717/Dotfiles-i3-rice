@@ -38,32 +38,36 @@ yellow = #d2b55b
 
 [bar/background]
 modules-center = date
-;modules-right = wlan
+modules-right = backlight battery wlan
 tray-position = right
 font-0 = JetBrains Mono:style=Regular
 height = 30
 width = 1820
 offset-y = 15
 offset-x = 50
-background = #aaa9ad 
+background = #144840
 radius = 15
 override-redirect=true
+
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+label-connected = "| %essid% %{F#00F000}%local_ip%"
 
 [module/date]
 type = internal/date
 date = "%h-%d-20%y %H:%M:%S"
-label-foreground = #000000
 
 [bar/i3]
 modules-center = i3
 height = 30
-width = 350
+width = 400
 offset-y = 15
 offset-x = 50
 radius=15
 override-redirect=true
-background = #004b59
-font-0 = JetBrains Mono:style=Regular
+;background = #004b59
 
 [module/i3]
 type = internal/i3
@@ -72,89 +76,45 @@ label-focused-background = ${colors.yellow}
 label-focused-foreground = ${colors.black}
 label-focused-underline= #ffffff
 label-focused-line-size=3
-label-focused-padding = 1
+label-focused-padding = 2
 
 label-unfocused = %index%
-label-unfocused-foreground = ${colors.white}
-label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.grey}
+label-unfocused-padding = 2
 label-urgent = %index%
 label-urgent-foreground = ${colors.white}
 label-urgent-background = ${colors.red}
-label-urgent-padding = 1
-
-[bar/battery]
-modules-center = battery
-height = 30
-width = 150
-offset-y = 15
-offset-x = 420
-radius=15
-override-redirect=true
-background = #004b59
-font-0 = JetBrains Mono:style=Regular
+label-urgent-padding = 2
 
 [module/battery]
 type = internal/battery
+; This is useful in case the battery never reports 100% charge
 full-at = 100
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
 battery = BAT0
 adapter = ADP1
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
 poll-interval = 5
 
-;time-format = %H:%M
-label-charging = CHR %percentage%%
-label-discharging = DIS %percentage%%
-label-full =  100%
-
-[bar/backlight]
-modules-center = backlight
-height = 30
-width = 150
-offset-y = 15
-offset-x = 600
-radius=15
-override-redirect=true
-background = #004b59
-font-0 = JetBrains Mono:style=Regular
-font-1 = siji:pixelsize=10;1
+time-format = %H:%M
+label-charging = | Charging %percentage%%
+label-discharging = | Discharging %percentage%%
+label-full =  | Fully charged
 
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
-format = BL <ramp>
-; Available tokens:
-; Only applies if <ramp> is used
-ramp-0 = ____
-ramp-1 = *___
-ramp-2 = **__
-ramp-3 = ***_
-ramp-4 = ****
+; Enable changing the backlight with the scroll wheel
+; NOTE: This may require additional configuration on some systems. Polybar will
+; write to `/sys/class/backlight/${self.card}/brightness` which requires polybar
+; to have write access to that file.
+; DO NOT RUN POLYBAR AS ROOT. 
+; The recommended way is to add the user to the
+; `video` group and give that group write-privileges for the `brightness` file.
+; See the ArchWiki for more information:
+; https://wiki.archlinux.org/index.php/Backlight#ACPI
+; Default: false
 enable-scroll = true
-label = "%percentage%%"
-
-[bar/wlan]
-modules-center = wlan
-height = 30
-width = 300
-offset-y = 15
-offset-x = 1570
-radius=15
-override-redirect=true
-background = #004b59
-font-0 = JetBrains Mono:style=Regular
-
-[module/wlan]
-type = internal/network
-interface = wlan0
-format-disconnected = <label-disconnected>
-format-connected = <label-connected> <ramp-signal>
-
-;label-connected = "CON %essid% %{F#00F000}%local_ip%"
-label-connected = "CON %essid%"
-label-disconnected = "UNC"
-
-ramp-signal-0 = _____
-ramp-signal-1 = *____
-ramp-signal-2 = **___
-ramp-signal-3 = ***__
-ramp-signal-4 = ****_
-ramp-signal-5 = *****
+label = "brightness: %percentage%%"
