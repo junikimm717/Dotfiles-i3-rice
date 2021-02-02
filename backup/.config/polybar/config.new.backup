@@ -57,7 +57,7 @@ label-foreground = #000000
 [bar/i3]
 modules-center = i3
 height = 30
-width = 500
+width = 350
 offset-y = 15
 offset-x = 50
 radius=15
@@ -72,22 +72,22 @@ label-focused-background = ${colors.yellow}
 label-focused-foreground = ${colors.black}
 label-focused-underline= #ffffff
 label-focused-line-size=3
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-unfocused = %index%
 label-unfocused-foreground = ${colors.white}
-label-unfocused-padding = 2
+label-unfocused-padding = 1
 label-urgent = %index%
 label-urgent-foreground = ${colors.white}
 label-urgent-background = ${colors.red}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 [bar/battery]
 modules-center = battery
 height = 30
 width = 150
 offset-y = 15
-offset-x = 600
+offset-x = 420
 radius=15
 override-redirect=true
 background = #29544b
@@ -110,7 +110,7 @@ modules-center = backlight
 height = 30
 width = 150
 offset-y = 15
-offset-x = 1100
+offset-x = 600
 radius=15
 override-redirect=true
 background = #004b59
@@ -135,9 +135,9 @@ label = "%percentage%%"
 ;background = #1a0936
 modules-center = wlan
 height = 30
-width = 320
+width = 300
 offset-y = 15
-offset-x = 1550
+offset-x = 1570
 radius=15
 override-redirect=true
 background = #1a0936
@@ -159,43 +159,3 @@ ramp-signal-2 = **___
 ramp-signal-3 = ***__
 ramp-signal-4 = ****_
 ramp-signal-5 = *****
-
-[bar/alsa]
-modules-center = alsa
-height = 30
-width = 200
-offset-y = 15
-offset-x = 1300
-radius=15
-override-redirect=true
-background = #0e311f
-font-0 = JetBrains Mono:style=Regular
-
-
-[module/alsa]
-type = internal/alsa
-format-volume = SOUND: <label-volume>
-
-; Soundcard to be used
-; Usually in the format hw:# where # is the card number
-; You can find the different card numbers in `/proc/asound/cards`
-master-soundcard = default
-speaker-soundcard = default
-headphone-soundcard = default
-
-master-mixer = Master
-
-; Optionally define speaker and headphone mixers
-; Default: none
-speaker-mixer = Speaker
-; Default: none
-headphone-mixer = Headphone
-
-headphone-id = 9
-
-; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
-; Default: false
-mapped = true
-
-; Default: 5
-interval = 5

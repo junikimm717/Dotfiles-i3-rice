@@ -17,6 +17,7 @@ newver() {
     polybar battery &
     polybar backlight &
     polybar wlan &
+    polybar alsa &
 }
 
 #old()
