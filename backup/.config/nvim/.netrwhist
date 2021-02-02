@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/home/junikim/.config/nvim'
-let g:netrw_dirhist_2='/home/junikim/dotfiles/backup'
-let g:netrw_dirhist_1='/home/junikim/ohsg9/OM60/wa/wa10'
